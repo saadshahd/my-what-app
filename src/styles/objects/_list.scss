@@ -1,0 +1,12 @@
+.list {
+  @include list-unstyle();
+
+  > li {
+    padding: 15px;
+    border-bottom: 1px solid $silver-dark;
+
+    &.active {
+      background-color: $silver;
+    }
+  }
+}

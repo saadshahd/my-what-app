@@ -1,5 +1,19 @@
+$_scroller-size: 6px;
+
 .scroller {
-  position: relative;
   overflow: auto;
-  max-height: 100%;
+
+  &::-webkit-scrollbar {
+    width: $_scroller-size;
+  }
+
+  &::-webkit-scrollbar-track-piece {
+    background-color: $grey-light;
+  }
+
+  &::-webkit-scrollbar-thumb:horizontal,
+  &::-webkit-scrollbar-thumb:vertical {
+    border-radius: $_scroller-size;
+    background-color: $grey-dark;
+  }
 }

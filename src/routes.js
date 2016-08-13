@@ -10,6 +10,15 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
   $stateProvider
     .state('app', {
       url: '/',
-      template: '<app></app>'
+      template: '<app class="screen"></app>'
+    })
+    .state('chats', {
+      url: 'chats',
+      parent: 'app',
+      template: '<chats class="row expanded collapse"></chats>'
+    })
+    .state('chats.item', {
+      url: '/:id',
+      template: '<chat-item></chat-item>'
     });
 }
