@@ -13,3 +13,8 @@
 .u-space-ver-large {
   margin-bottom: $global-margin * 2;
 }
+
+// Inside space === Padding
+.u-space-inside {
+  padding: $global-margin;
+}

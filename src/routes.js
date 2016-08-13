@@ -19,6 +19,6 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
     })
     .state('chats.item', {
       url: '/:id',
-      template: '<chat-item></chat-item>'
+      template: '<chat-item class="chat"></chat-item>'
     });
 }

@@ -1,5 +1,5 @@
 .list {
-  @include list-unstyle();
+  @include list-unstyle;
 
   > li {
     padding: 15px;

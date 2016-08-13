@@ -26,13 +26,15 @@
   'objects/avatars-group',
   'objects/time',
   'objects/scroller',
-  'objects/drag-drop-box',
+  'objects/input-group',
   'objects/button';
 
 @import
   'components/screen',
   'components/header',
   'components/sidebar',
+  'components/chat',
+  'components/message',
   'components/seperator';
 
 @import
@@ -40,4 +42,5 @@
   'trumps/text',
   'trumps/icon',
   'trumps/color',
+  'trumps/list',
   'trumps/space';
