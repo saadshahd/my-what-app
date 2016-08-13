@@ -20,6 +20,11 @@ function inject() {
     addRootSlash: false
   };
 
+  gulp.src(conf.path.src('styles/main.scss'))
+    .pipe(wiredep(Object.assign({}, conf.wiredep)))
+    .pipe(gulp.dest(conf.path.src('styles/')))
+    .pipe(browserSync.stream());
+
   return gulp.src(conf.path.src('index.html'))
     .pipe(gulpInject(injectScripts, injectOptions))
     .pipe(wiredep(Object.assign({}, conf.wiredep)))

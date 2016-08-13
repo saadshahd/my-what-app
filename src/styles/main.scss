@@ -1,0 +1,38 @@
+@import
+  'settings/variables',
+  'settings/framework';
+
+// bower:scss
+@import "../../bower_components/foundation-sites/scss/foundation.scss";
+// endbower
+
+@include foundation-everything(true);
+
+@import
+  'tools/mixins';
+
+@import
+  'general/grid';
+
+@import
+  'base/font',
+  'base/forms';
+
+@import
+  'objects/ion',
+  'objects/link',
+  'objects/avatar',
+  'objects/scroller',
+  'objects/drag-drop-box',
+  'objects/button';
+
+@import
+  'components/screen',
+  'components/seperator';
+
+@import
+  'trumps/display',
+  'trumps/text',
+  'trumps/icon',
+  'trumps/color',
+  'trumps/space';

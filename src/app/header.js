@@ -1,5 +1,5 @@
 angular
   .module('app')
-  .component('fountainHeader', {
+  .component('myHeader', {
     templateUrl: 'app/header.html'
   });
