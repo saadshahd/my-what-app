@@ -5,8 +5,8 @@ $silver-light: lighten($silver, 2%);
 $silver-dark: darken($silver, 3%);
 
 $grey: #b6b4Ca;
-$grey-light: #b9bed1;
-$grey-dark: #aaa;
+$grey-light: lighten($grey, 5%);
+$grey-dark: darken($grey, 5%);
 
 $black: #333;
 
