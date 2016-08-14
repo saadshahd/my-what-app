@@ -5,6 +5,7 @@ $_add-message-dom-height: $_add-message-field-height + ($_add-message-padding * 
 .chat {
   display: block;
   height: 100%;
+  position: relative;
 }
 
 .chat__messages {
@@ -21,4 +22,24 @@ $_add-message-dom-height: $_add-message-field-height + ($_add-message-padding * 
   resize: none;
   margin-bottom: 0;
   height: $_add-message-field-height;
+}
+
+.chat__trolling-1,
+.chat__trolling-2 {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.chat__trolling-1 {
+  background-image: url('/images/trolling-1.jpg');
+}
+
+.chat__trolling-2 {
+  background-image: url('/images/trolling-2.jpg');
 }
