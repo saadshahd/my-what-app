@@ -10,7 +10,7 @@ angular
           chance: {
             natural: {
               min: 1,
-              max: 99
+              max: 9999
             }
           }
         },
