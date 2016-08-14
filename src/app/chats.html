@@ -1,131 +1,38 @@
 <div class="column medium-3">
   <div class="sidebar scroller">
     <ul class="list">
-      <li class="active">
-        <a>
+      <li
+        ui-sref-active
+        ng-repeat="chat in chats.list track by $index"
+      >
+        <a
+          class="u-block"
+          ui-sref="chats.item({id: chat.id})"
+        >
           <div class="avatars-group u-space-ver-small">
             <img
-              src="https://placekitten.com/32/32"
               class="avatar"
-            >
-            <img
-              src="https://placeimg.com/32/32/any"
-              class="avatar"
-            >
-            <img
-              src="https://placeimg.com/32/32/any?1"
-              class="avatar"
+              ng-repeat="participant in chat.participants track by $index"
+              ng-src="{{participant.avatar + participant.name}}"
+              ng-alt="{{participant.name}}"
+              width="32"
             >
           </div>
-          <p class="u-black u-space-ver-undo">هاي!</p>
+          <p
+            class="u-black u-space-ver-undo"
+            ng-bind="chat.lastMessage"
+          ></p>
           <time class="time">
-            <i class="ion-clock"></i> 2 minutes ago
-          </time>
-        </a>
-      </li>
-      <li>
-        <a>
-          <div class="avatars-group u-space-ver-small">
-            <img
-              src="https://placeimg.com/32/32/any?2"
-              class="avatar"
-            >
-            <img
-              src="https://placeimg.com/32/32/any?3"
-              class="avatar"
-            >
-          </div>
-          <p class="u-black u-space-ver-undo">باي</p>
-          <time class="time">
-            <i class="ion-clock"></i> 21 minutes ago
-          </time>
-        </a>
-      </li>
-      <li>
-        <a>
-          <div class="avatars-group u-space-ver-small">
-            <img
-              src="https://placeimg.com/32/32/any?2"
-              class="avatar"
-            >
-            <img
-              src="https://placeimg.com/32/32/any?3"
-              class="avatar"
-            >
-          </div>
-          <p class="u-black u-space-ver-undo">باي</p>
-          <time class="time">
-            <i class="ion-clock"></i> 21 minutes ago
-          </time>
-        </a>
-      </li>
-      <li>
-        <a>
-          <div class="avatars-group u-space-ver-small">
-            <img
-              src="https://placeimg.com/32/32/any?5"
-              class="avatar"
-            >
-          </div>
-          <p class="u-black u-space-ver-undo">فاي</p>
-          <time class="time">
-            <i class="ion-clock"></i> 22 minutes ago
-          </time>
-        </a>
-      </li>
-      <li>
-        <a>
-          <div class="avatars-group u-space-ver-small">
-            <img
-              src="https://placeimg.com/32/32/any?2"
-              class="avatar"
-            >
-            <img
-              src="https://placeimg.com/32/32/any?3"
-              class="avatar"
-            >
-          </div>
-          <p class="u-black u-space-ver-undo">هاي</p>
-          <time class="time">
-            <i class="ion-clock"></i> 24 minutes ago
-          </time>
-        </a>
-      </li>
-      <li>
-        <a>
-          <div class="avatars-group u-space-ver-small">
-            <img
-              src="https://placeimg.com/32/32/any?2"
-              class="avatar"
-            >
-            <img
-              src="https://placeimg.com/32/32/any?3"
-              class="avatar"
-            >
-          </div>
-          <p class="u-black u-space-ver-undo">شاي</p>
-          <time class="time">
-            <i class="ion-clock"></i> 43 minutes ago
-          </time>
-        </a>
-      </li>
-      <li>
-        <a>
-          <div class="avatars-group u-space-ver-small">
-            <img
-              src="https://placeimg.com/32/32/any?6"
-              class="avatar"
-            >
-          </div>
-          <p class="u-black u-space-ver-undo">راي</p>
-          <time class="time">
-            <i class="ion-clock"></i> 49 minutes ago
+            <i class="ion-clock"></i> {{chat.lastActive | timeAgo}}
           </time>
         </a>
       </li>
     </ul>
     <div class="sidebar__footer text-center">
-      <button class="button">Load more!</button>
+      <button
+        class="button"
+        ng-click="chats.loadList()"
+      >Load more!</button>
     </div>
   </div>
 </div>
