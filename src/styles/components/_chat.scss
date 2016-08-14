@@ -1,0 +1,24 @@
+$_add-message-padding: 20px;
+$_add-message-field-height: 51px;
+$_add-message-dom-height: $_add-message-field-height + ($_add-message-padding * 2);
+
+.chat {
+  display: block;
+  height: 100%;
+}
+
+.chat__messages {
+  height: calc(100% - #{$_add-message-dom-height});
+}
+
+.chat__add {
+  padding: $_add-message-padding;
+  background-color: $silver-dark;
+  border-top: 1px solid $grey-light;
+}
+
+.chat__textfield {
+  resize: none;
+  margin-bottom: 0;
+  height: $_add-message-field-height;
+}

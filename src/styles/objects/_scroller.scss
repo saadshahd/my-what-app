@@ -2,6 +2,7 @@ $_scroller-size: 6px;
 
 .scroller {
   overflow: auto;
+  max-height: 100%;
 
   &::-webkit-scrollbar {
     width: $_scroller-size;

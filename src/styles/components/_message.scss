@@ -1,0 +1,58 @@
+$_message-arrow-size: 10px;
+$_m-a-z: $_message-arrow-size;
+
+.message {
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.message__avatar,
+.message__text {
+  float: left;
+
+  .message.is-mine & {
+    float: right;
+  }
+}
+
+.message__avatar {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.message__text {
+  padding: 7px 10px;
+  font-size: 15px;
+
+  color: $white;
+  background-color: $primary;
+  border-radius: 0 10px 10px 10px;
+  position: relative;
+
+  .message.is-mine & {
+    // color: $primary;
+    background-color: $grey-dark;
+    border-radius: $_m-a-z 0 $_m-a-z $_m-a-z;
+  }
+
+  &::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border: solid transparent;
+    border-width: 0 $_m-a-z $_m-a-z 0;
+    border-right-color: $primary;
+    position: absolute;
+    top: 0;
+    left: -$_m-a-z;
+
+    .message.is-mine & {
+      border-left-color: $grey-dark;
+      border-right-color: transparent;
+      border-left-width: $_m-a-z;
+      border-right-width: 0;
+      left: auto;
+      right: -$_m-a-z;
+    }
+  }
+}
