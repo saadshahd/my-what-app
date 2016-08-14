@@ -7,7 +7,7 @@ angular
     templateUrl: 'app/chat.html'
   });
 
-function ChatCtrl($scope, chatService, userService, Upload) {
+function ChatCtrl(chatService, userService, Upload) {
   const chat = this;
 
   chat.$onInit = load;
