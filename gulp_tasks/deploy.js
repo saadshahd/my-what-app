@@ -1,11 +1,13 @@
 const gulp = require('gulp');
-const ghPages = require('gulp-gh-pages');
+const surge = require('gulp-surge');
 
 const conf = require('../conf/gulp.conf');
 
 gulp.task('deploy', deploy);
 
 function deploy() {
-  return gulp.src(conf.paths.dist)
-    .pipe(ghPages());
+  return surge({
+    project: conf.paths.dist,
+    domain: 'utopian-room.surge.sh'
+  });
 }
