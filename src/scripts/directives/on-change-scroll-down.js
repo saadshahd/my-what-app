@@ -9,7 +9,10 @@
 
         function scrollDown() {
           const scrollTop = element.prop('scrollHeight');
-          element.animate({scrollTop});
+
+          element
+            .stop()
+            .animate({scrollTop});
         }
 
         function watcher(newVal, oldVal) {
