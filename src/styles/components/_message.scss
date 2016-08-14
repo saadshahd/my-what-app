@@ -22,9 +22,7 @@ $_m-a-z: $_message-arrow-size;
 
 .message__content {
   max-width: 40%;
-  padding: 7px 10px;
   font-size: 15px;
-  white-space: pre;
 
   position: relative;
 
@@ -58,8 +56,19 @@ $_m-a-z: $_message-arrow-size;
     }
   }
 
-  &.-img {
-    padding: 3px;
+  & > span {
+    display: block;
+    margin: 7px 10px;
+    white-space: pre;
+  }
+
+  & > img {
+    display: block;
+    margin: 3px;
     max-height: 250px;
+    border-radius: $_m-a-z;
+
+    min-height: 100px;
+    min-width: 100px;
   }
 }
