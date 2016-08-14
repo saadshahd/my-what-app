@@ -7,7 +7,7 @@ $_m-a-z: $_message-arrow-size;
 }
 
 .message__avatar,
-.message__text {
+.message__content {
   float: left;
 
   .message.is-mine & {
@@ -20,17 +20,19 @@ $_m-a-z: $_message-arrow-size;
   margin-right: 10px;
 }
 
-.message__text {
+.message__content {
+  max-width: 40%;
   padding: 7px 10px;
   font-size: 15px;
+  white-space: pre;
+
+  position: relative;
 
   color: $white;
   background-color: $primary;
-  border-radius: 0 10px 10px 10px;
-  position: relative;
+  border-radius: 0 $_m-a-z $_m-a-z $_m-a-z;
 
   .message.is-mine & {
-    // color: $primary;
     background-color: $grey-dark;
     border-radius: $_m-a-z 0 $_m-a-z $_m-a-z;
   }
@@ -54,5 +56,10 @@ $_m-a-z: $_message-arrow-size;
       left: auto;
       right: -$_m-a-z;
     }
+  }
+
+  &.-img {
+    padding: 3px;
+    max-height: 250px;
   }
 }

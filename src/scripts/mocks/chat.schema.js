@@ -8,7 +8,7 @@ angular
         chance: {
           natural: {
             min: 1,
-            max: 99
+            max: 9999
           }
         }
       },
@@ -17,6 +17,15 @@ angular
         items: {
           type: 'object',
           properties: {
+            id: {
+              type: 'number',
+              chance: {
+                natural: {
+                  min: 1,
+                  max: 9999
+                }
+              }
+            },
             isMine: 'boolean',
             participant: {
               type: 'object',
@@ -39,18 +48,36 @@ angular
                 'name',
                 'avatar'
               ]
-            },
-            text: {
-              type: 'string',
-              chance: {
-                sentence: {
-                  words: 5
+            }
+          },
+          oneOf: [{
+            properties: {
+              image: {
+                type: 'url',
+                chance: {
+                  url: {
+                    domain: 'placeimg.com',
+                    path: '/200/200/any?'
+                  }
                 }
               }
             }
-          },
+          }, {
+            properties: {
+              text: {
+                type: 'string',
+                chance: {
+                  sentence: {
+                    words: 5
+                  }
+                }
+              }
+            }
+          }],
           required: [
+            'id',
             'participant',
+            'image',
             'text'
           ]
         },

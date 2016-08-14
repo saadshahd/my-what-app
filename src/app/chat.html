@@ -1,5 +1,8 @@
 <div class="chat__messages">
-  <div class="scroller">
+  <div
+    class="scroller"
+    on-change-scroll-down="chat.data.messages"
+  >
     <ul class="u-space-inside u-list-unstyle">
       <li
         class="message"
@@ -14,26 +17,55 @@
           width="32"
           height="32"
         >
-        <span class="message__text" ng-bind="message.text"></span>
+        <span
+          class="message__content"
+          ng-if="message.text"
+          ng-bind="message.text"
+        ></span>
+        <img
+          class="message__content -img"
+          ng-if="message.image"
+          ng-src="{{message.image}}"
+        >
       </li>
     </ul>
   </div>
 </div>
-<div class="chat__add">
+<div
+  class="chat__add"
+  ngf-drop="chat.addImages($files)"
+  ngf-multiple="true"
+  ngf-pattern="'image/*'"
+  ngf-drag-over-class="'dragover'"
+  ng-disabled="!chat.data.isActive"
+>
   <div class="input-group u-space-ver-undo">
     <textarea
       class="scroller chat__textfield input-group-field"
       placeholder="Type your message ..."
+      ng-disabled="!chat.data.isActive"
+      ng-model="chat.addTextField"
+      on-enter="chat.viewAddText();"
     ></textarea>
 
     <div class="input-group-button">
-      <button class="button default">
+      <button
+        class="button default"
+        ngf-select="chat.addImages($files)"
+        ngf-multiple="true"
+        ngf-pattern="'image/*'"
+        ng-disabled="!chat.data.isActive"
+      >
         <i class="ion-android-attach u-icon-20"></i>
       </button>
     </div>
 
     <div class="input-group-button">
-      <button class="button">
+      <button
+        class="button"
+        ng-disabled="!chat.data.isActive"
+        ng-click="chat.viewAddText();"
+      >
         <i class="ion-android-send u-icon-20"></i>
       </button>
     </div>

@@ -5,6 +5,7 @@
     "$": true,
     "angular": true,
     "jsf": true,
+    "chance": true
   },
   "rules": {
     "curly": ["error", "multi", "consistent"]
