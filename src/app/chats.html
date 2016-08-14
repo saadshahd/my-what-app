@@ -11,13 +11,11 @@
         >
           <div class="avatars-group u-space-ver-small">
             <img
-              class="avatar"
+              class="avatar u-img-32"
               ng-repeat="participant in chat.participants track by $index"
               ng-src="{{participant.avatar + participant.name}}"
               alt="{{participant.name}}"
               title="{{participant.name}}"
-              width="32"
-              height="32"
             >
           </div>
           <p

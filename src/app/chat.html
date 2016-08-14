@@ -10,23 +10,23 @@
         ng-class="{'is-mine': message.isMine}"
       >
         <img
-          class="message__avatar avatar"
+          class="message__avatar avatar u-img-32"
           ng-src="{{message.participant.avatar + message.participant.name}}"
           alt="{{message.participant.name}}"
           title="{{message.participant.name}}"
-          width="32"
-          height="32"
         >
-        <span
-          class="message__content"
-          ng-if="message.text"
-          ng-bind="message.text"
-        ></span>
-        <img
-          class="message__content -img"
-          ng-if="message.image"
-          ng-src="{{message.image}}"
-        >
+        <div class="message__content">
+          <span
+            ng-if="message.text"
+            ng-bind="message.text"
+          ></span>
+
+          <img
+            ng-if="message.image"
+            ng-src="{{message.image}}"
+          >
+        </div>
+
       </li>
     </ul>
   </div>
