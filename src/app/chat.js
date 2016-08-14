@@ -12,6 +12,7 @@ function ChatCtrl($scope, chatService, userService, Upload) {
 
   chat.$onInit = load;
   chat.load = load;
+  chat.number = _.random(0, 5);
   chat.addImages = addImages;
   chat.viewAddText = viewAddText;
 
