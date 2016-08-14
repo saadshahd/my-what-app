@@ -14,8 +14,10 @@
               class="avatar"
               ng-repeat="participant in chat.participants track by $index"
               ng-src="{{participant.avatar + participant.name}}"
-              ng-alt="{{participant.name}}"
+              alt="{{participant.name}}"
+              title="{{participant.name}}"
               width="32"
+              height="32"
             >
           </div>
           <p

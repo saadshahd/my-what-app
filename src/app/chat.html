@@ -1,68 +1,20 @@
 <div class="chat__messages">
   <div class="scroller">
     <ul class="u-space-inside u-list-unstyle">
-      <li class="message">
+      <li
+        class="message"
+        ng-repeat="message in chat.data.messages track by $index"
+        ng-class="{'is-mine': message.isMine}"
+      >
         <img
-          src="https://placeimg.com/36/36/any?3"
           class="message__avatar avatar"
+          ng-src="{{message.participant.avatar + message.participant.name}}"
+          alt="{{message.participant.name}}"
+          title="{{message.participant.name}}"
+          width="32"
+          height="32"
         >
-        <span class="message__text">أهلًا يا حاج</span>
-      </li>
-      <li class="message">
-        <img
-          src="https://placeimg.com/36/36/any?4"
-          class="message__avatar avatar"
-        >
-        <span class="message__text">إيه دا يا حاج أنت بتطلع بالتالت</span>
-      </li>
-      <li class="message is-mine">
-        <img
-          src="https://placekitten.com/36/36"
-          class="message__avatar avatar"
-        >
-        <span class="message__text">ما تمسك الخشب يابني</span>
-      </li>
-      <li class="message">
-        <img
-          src="https://placeimg.com/36/36/any?3"
-          class="message__avatar avatar"
-        >
-        <span class="message__text">أهلًا يا حاج</span>
-      </li>
-      <li class="message">
-        <img
-          src="https://placeimg.com/36/36/any?4"
-          class="message__avatar avatar"
-        >
-        <span class="message__text">إيه دا يا حاج أنت بتطلع بالتالت</span>
-      </li>
-      <li class="message is-mine">
-        <img
-          src="https://placekitten.com/36/36"
-          class="message__avatar avatar"
-        >
-        <span class="message__text">ما تمسك الخشب يابني</span>
-      </li>
-      <li class="message">
-        <img
-          src="https://placeimg.com/36/36/any?3"
-          class="message__avatar avatar"
-        >
-        <span class="message__text">أهلًا يا حاج</span>
-      </li>
-      <li class="message">
-        <img
-          src="https://placeimg.com/36/36/any?4"
-          class="message__avatar avatar"
-        >
-        <span class="message__text">إيه دا يا حاج أنت بتطلع بالتالت</span>
-      </li>
-      <li class="message is-mine">
-        <img
-          src="https://placekitten.com/36/36"
-          class="message__avatar avatar"
-        >
-        <span class="message__text">ما تمسك الخشب يابني</span>
+        <span class="message__text" ng-bind="message.text"></span>
       </li>
     </ul>
   </div>
