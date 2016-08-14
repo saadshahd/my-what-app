@@ -52,6 +52,7 @@ function ChatCtrl($scope, chatService, userService, Upload) {
   }
 
   function viewAddText() {
+    if (!chat.addTextField) return;
     addText(chat.addTextField);
     chat.addTextField = '';
   }
