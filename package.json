@@ -70,5 +70,8 @@
     "extends": [
       "xo-space/esnext"
     ]
+  },
+  "dependencies": {
+    "gulp-rename": "^1.2.2"
   }
 }
