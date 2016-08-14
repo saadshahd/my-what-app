@@ -52,7 +52,12 @@ angular
         },
         lastActive: {
           type: 'date',
-          chance: 'date'
+          chance: {
+            date: {
+              year: 2016,
+              month: 7
+            }
+          }
         }
       },
       required: [
@@ -63,6 +68,6 @@ angular
       ]
     },
     minItems: 6,
-    maxItems: 24,
+    maxItems: 10,
     uniqueItems: true
   });
