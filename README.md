@@ -17,7 +17,7 @@ If you have [`gulp-cli`](https://www.npmjs.com/package/gulp-cli) installed in gl
 - `gulp test`
 - `gulp test:auto`
 
-**If you don't have [`gulp-cli`](https://www.npmjs.com/package/gulp-cli) installed in global, you should have this error:**
+**If you don't have [`gulp-cli`](https://www.npmjs.com/package/gulp-cli) installed in global, you would face this error:**
 > /usr/local/lib/node_modules/gulp/bin/gulp.js:121
     gulpInst.start.apply(gulpInst, toRun);
 TypeError: Cannot read property 'apply' of undefined
